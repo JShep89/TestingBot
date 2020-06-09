@@ -49,11 +49,11 @@ module.exports = function(config, message, edited, deleted)
       bot: bot,
       message: message,
       canWrite: true,
-      permissions: permissions
+ 
    };
 
    // ==================
-   // Proccess Commands
+   // Process Commands
    // ==================
 
    if (
