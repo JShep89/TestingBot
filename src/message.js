@@ -15,12 +15,22 @@ module.exports = function(config, message, edited, deleted)
    //
    // Ignore messages by bots
    //
-   const roles = [roles]
+   const role = [roles]
 
-   if (message.member.roles.find("name", "VIP"))
+   if (message.member.roles.some(role => role.name === 'VIP')) 
+  {
    {
-      return;
+      {message.author.bot}
    }
+return botsend(data)
+}
+   { 
+   {message.author.bot}
+
+   return botsend(data)}
+   }
+ 
+
    
    //
    // Embed member permissions in message data
