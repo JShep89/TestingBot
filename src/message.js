@@ -16,7 +16,9 @@ module.exports = function(config, message, edited, deleted)
    // Ignore messages by bots
    //
 
-   if (message.author.bot)
+   
+
+if (message.author.id === client.bot.id)
    {
       return;
    }
