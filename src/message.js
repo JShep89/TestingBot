@@ -17,11 +17,8 @@ module.exports = function(config, message, edited, deleted)
    //
    
    
-   if (message.member.permissions.has("ADMINISTRATOR");)
+   if (message.member.permissions.has("ADMINISTRATOR"))
    {
-      {
-         message.author.bot;
-      }
       return
    }
  
