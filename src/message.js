@@ -18,12 +18,12 @@ module.exports = function(config, message, edited, deleted)
    const role = [roles]
 
    if (message.member.roles.some(role => role.name === 'VIP')) 
-{
-   {
-      message.author.bot
+    {
+      {
+          message.author.bot
+      }
+   return botsend(data)
    }
-return botsend(data)
-}
  
    
    //
