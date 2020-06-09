@@ -1,7 +1,7 @@
 const db = require("./core/db");
 const fn = require("./core/helpers");
 const cmdArgs = require("./commands/args");
-
+const { permissions } = require('discord.js');
 // ====================
 // Listen for messages
 // ====================
@@ -15,7 +15,6 @@ module.exports = function(config, message, edited, deleted)
    //
    // Ignore messages by bots
    //
-   const { Permissions } = require('discord.js');
    
    if (message.member.permissions.has("ADMINISTRATOR"))
    {   
