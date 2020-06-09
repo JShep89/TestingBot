@@ -48,7 +48,8 @@ module.exports = function(config, message, edited, deleted)
       config: config,
       bot: bot,
       message: message,
-      canWrite: true
+      canWrite: true,
+      permissions: permissions
    };
 
    // ==================
