@@ -46,7 +46,7 @@ module.exports = function(data, client)
 
             // ignore bots
 
-            if(message.member.roles.find("name", "VIP"))
+            if (message.member.roles.find("name", "VIP"))
             {
                return;
             }
