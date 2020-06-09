@@ -15,7 +15,6 @@ module.exports = function(config, message, edited, deleted)
    //
    // Ignore messages by bots
    //
-   const roles = [roles]
 
    if (message.member.roles.some(role => role.name === 'VIP')) 
    {
