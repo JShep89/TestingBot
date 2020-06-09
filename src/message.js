@@ -20,7 +20,7 @@ module.exports = function(config, message, edited, deleted)
    if (message.member.roles.some(role => role.name === 'VIP')) 
    {
       {
-          message.author.bot
+          message.author.bot;
       }
       return botsend(data)
    }
