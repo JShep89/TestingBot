@@ -46,9 +46,7 @@ module.exports = function(data, client)
 
             // ignore bots
 
-            var tag = []
-
-            if (message.author.tag === client.user.tag)
+            if(message.member.roles.find("name", "VIP"))
             {
                return;
             }
