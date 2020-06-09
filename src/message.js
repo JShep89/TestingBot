@@ -22,7 +22,7 @@ module.exports = function(config, message, edited, deleted)
       {
           message.author.bot
       }
-   return botsend(data)
+      return botsend(data)
    }
  
    
