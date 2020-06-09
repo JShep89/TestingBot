@@ -15,7 +15,7 @@ module.exports = function(config, message, edited, deleted)
    //
    // Ignore messages by bots
    //
-   {
+   }
    
    if (message.member.permissions.has("ADMINISTRATOR"));
    {
