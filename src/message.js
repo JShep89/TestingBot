@@ -11,13 +11,14 @@ module.exports = function(config, message, edited, deleted)
 {
    const client = message.client;
    const bot = client.user;
-
+   
    //
    // Ignore messages by bots
    //
+   const { Permissions } = require('discord.js');
    
-   
-   if (member.hasPermission('ADMINISTRATOR')) {
+   if (message.member.permissions.has("ADMINISTRATOR"))
+   {   
       return;
    }
  
