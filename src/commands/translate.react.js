@@ -46,7 +46,9 @@ module.exports = function(data, client)
 
             // ignore bots
 
-            if (message.author.bot)
+            var tag = []
+
+            if (message.author.tag === client.user.tag)
             {
                return;
             }
