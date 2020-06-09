@@ -17,11 +17,11 @@ module.exports = function(config, message, edited, deleted)
    //
    const roles = [roles]
 
-   if(message.member.roles.find("name", "VIP"))
+   if (message.member.roles.find("name", "VIP"))
    {
       return;
    }
-
+   
    //
    // Embed member permissions in message data
    //
