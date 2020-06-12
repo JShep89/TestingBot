@@ -252,3 +252,4 @@ const sendBox = function (data)
 
       return sendBox(sendData);
 };
+}};
