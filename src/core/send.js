@@ -5,7 +5,7 @@ const logger = require("./logger");
 const discord = require("discord.js");
 const webhookClient = new Discord.WebhookClient(config.webhookID, config.webhookToken);
 const config = require("./config.json");
-
+var discord = ("discord.js");
 //
 // Send Data to Channel
 //
