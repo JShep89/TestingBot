@@ -5,7 +5,7 @@ const logger = require("./logger");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
-const channel_ID = client.channels.cache.get(config.webhookID);
+const channel = client.channels.cache.get(config.webhookID);
 
 
 //
