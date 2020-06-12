@@ -239,4 +239,6 @@ const sendAttachments = function(data)
             }
         }
         
-        return sendBox(sendData){ ;
+        return sendBox(sendData)();
+   }
+};
