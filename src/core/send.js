@@ -35,7 +35,7 @@ const sendBox = function(data)
       }).then(() =>
       {
          
-       webhookClient.send('Webhook test', {
+       webhook.send('Webhook test', {
 	username: '$(user.username)',
 	avatarURL: '$(user.image)',
 	content: 'data'
