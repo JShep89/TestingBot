@@ -13,7 +13,7 @@ const channel = client.channels.cache.get(config.webhookID);
 //
 
 const sendBox = function(data)
-
+}
    if (data.text && data.text.length > 1)
    {
       data.channel.send(data.text);
