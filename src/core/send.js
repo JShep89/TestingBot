@@ -2,10 +2,10 @@ const colors = require("./colors");
 const fn = require("./helpers");
 const db = require("./db");
 const logger = require("./logger");
-const discord = require("discord.js");
-const webhookClient = new Discord.WebhookClient(config.webhookID, config.webhookToken);
+const Discord = require("discord.js");
+const client = new Discord.Client();
 const config = require("./config.json");
-var discord = ()
+
 //
 // Send Data to Channel
 //
@@ -35,10 +35,30 @@ const sendBox = function(data)
       }).then(() =>
       {
          
-       webhook.send('Webhook test', {
-	username: '$(user.username)',
-	avatarURL: '$(user.image)',
-	content: 'data'
+       const Discord = require('discord.js');
+const config = require('./config.json');
+
+const client = new Discord.Client();
+
+const embed = new Discord.MessageEmbed()
+    .setTitle('Some Title')
+    .setColor('#0099ff');
+
+client.once('ready', async () => {
+    const channel = client.channels.cache.get(config.webhookID); //This is the problem.
+    try {
+        const webhooks = await channel.fetchWebhooks(); //This will not execute because channel is undefined.
+        const webhook = webhooks.first();
+
+        await webhook.send('Webhook test', {
+            username: 'some-username',
+            avatarURL: 'https://i.imgur.com/wSTFkRM.png',
+            embeds: [embed],
+        });
+    } catch (error) {
+        console.error('Error trying to send: ', error);
+    }
+});
 });
 
       }).catch(err =>
