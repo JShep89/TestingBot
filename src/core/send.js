@@ -1,4 +1,3 @@
-const colors = require("./colors");
 const fn = require("./helpers");
 const db = require("./db");
 const logger = require("./logger");
@@ -7,48 +6,37 @@ const client = new Discord.Client();
 const config = require("./config.json");
 const channel = client.channels.cache.get(config.webhookID);
 
-
-//
 // Send Data to Channel
-//
+const sendBox = function(data) {
+  if (data.text && data.text.length > 1) {
+    data.channel.send(data.text);
+  }
+  }).then(() => {
+    try {
+    const webhooks = await channel.fetchWebhooks(); 
+    // not execute because channel is undefined
+    const webhook = webhooks.first();
 
-const sendBox = function(data)}
+    await webhook.send('Webhook test', 
+    {
+      username: '${username}#${user.discriminator}',
+      avatarURL: 'user.avatarURL',
+      content: 'data.text'
+    });
+  } catch (error) {
+    console.error('Error trying to send: ', error);
+  }
+  });
+  });
 
-   if (data.text && data.text.length > 1)
-   {
-      data.channel.send(data.text);
-         
-         }
-      }).then(() =>
-      {
-       try {
-         const webhooks = await channel.fetchWebhooks(); //This will not execute because channel is undefined.
-         const webhook = webhooks.first();
-
-        await webhook.send('Webhook test', {
-            username: '${username}#${user.discriminator}',
-            avatarURL: 'user.avatarURL',
-            content: 'data.text',
-        });
-    } catch (error) {
-        console.error('Error trying to send: ', error);
-    }
+}).catch(err => {
+      var errMsg = err;
+      logger("dev", err);
+      // Error for long messages
+      if (err.code && err.code === 50035) {
+        data.channel.send(":warning:  Message is too long.");
+      }
 });
-});
-
-      }).catch(err =>
-      {
-         var errMsg = err;
-         logger("dev", err);
-
-         //
-         // Error for long messages
-         //
-
-         if (err.code && err.code === 50035)
-         {
-            data.channel.send(":warning:  Message is too long.");
-         }
 
          //
          // Handle error for users who cannot recieve private messages
