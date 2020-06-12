@@ -2,12 +2,12 @@ const colors = require("./colors");
 const fn = require("./helpers");
 const db = require("./db");
 const logger = require("./logger");
-const Discord = require("discord.js");
+const discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
 const channel = client.channels.cache.get(config.webhookID);
 
-
+var channel = client.channels.cache.get(config.webhookID);
 //
 // Send Data to Channel
 //
@@ -25,14 +25,8 @@ const sendBox = function(data)
 
    if (data.text && data.text.length > 1)
    {
-      data.channel.send({
-         text: {
-            title: data.title,
-            fields: data.fields,
-            author: data.author,
-            color: colors.get(data.color),
-            description: data.text,
-            footer: data.footer
+      data.channel.send(data.text);
+         
          }
       }).then(() =>
       {
