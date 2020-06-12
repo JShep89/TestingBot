@@ -7,20 +7,13 @@ const client = new Discord.Client();
 const config = require("./config.json");
 const channel = client.channels.cache.get(config.webhookID);
 
-var channel = client.channels.cache.get(config.webhookID);
+
 //
 // Send Data to Channel
 //
 
 const sendBox = function(data)
 {
-   if (data.author)
-   {
-      data.author = {
-         name: data.author.username,
-         //eslint-disable-next-line camelcase
-         icon_url: data.author.displayAvatarURL
-      };
    }
 
    if (data.text && data.text.length > 1)
