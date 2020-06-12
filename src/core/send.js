@@ -7,8 +7,8 @@ const client = new Discord.Client();
 const config = require("./config.json");
 const channel_ID = client.channels.cache.get(config.webhookID);
 const FILTER_USERNAME_REGEX = /[A-Za-z0-9_!? -,.éè]*/g;
-const TRY_MENTION_REGEX = /(?<=((?<!<)@|(?<!<)#))(\S+)/;
-const MENTION_REGEX = /<(@&|@|#)!?([0-9]+)>/;
+
+function filterUsername(username) {
 
 //
 // Send Data to Channel
