@@ -6,9 +6,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
 const channel_ID = client.channels.cache.get(config.webhookID);
-const FILTER_USERNAME_REGEX = /[A-Za-z0-9_!? -,.éè]*/g;
 
-function filterUsername(username) {
 
 //
 // Send Data to Channel
@@ -43,8 +41,8 @@ const sendBox = function(data)
          const webhook = webhooks.first();
 
         await webhook.send('Webhook test', {
-            username: `${username}#${user.discriminator}`,
-            avatarURL: user.avatarURL,
+            username: '${username}#${user.discriminator}',
+            avatarURL: 'user.avatarURL',
             content: 'data.text',
         });
     } catch (error) {
