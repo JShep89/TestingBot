@@ -12,8 +12,8 @@ const channel = client.channels.cache.get(config.webhookID);
 // Send Data to Channel
 //
 
-const sendBox = function(data)
-}
+const sendBox = function(data)}
+
    if (data.text && data.text.length > 1)
    {
       data.channel.send(data.text);
