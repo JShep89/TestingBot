@@ -5,6 +5,10 @@ const logger = require("./logger");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
+const channel_ID = client.channels.cache.get(config.webhookID);
+const FILTER_USERNAME_REGEX = /[A-Za-z0-9_!? -,.éè]*/g;
+const TRY_MENTION_REGEX = /(?<=((?<!<)@|(?<!<)#))(\S+)/;
+const MENTION_REGEX = /<(@&|@|#)!?([0-9]+)>/;
 
 //
 // Send Data to Channel
@@ -34,26 +38,14 @@ const sendBox = function(data)
          }
       }).then(() =>
       {
-         
-       const Discord = require('discord.js');
-const config = require('./config.json');
-
-const client = new Discord.Client();
-
-const embed = new Discord.MessageEmbed()
-    .setTitle('Some Title')
-    .setColor('#0099ff');
-
-client.once('ready', async () => {
-    const channel = client.channels.cache.get(config.webhookID); //This is the problem.
-    try {
-        const webhooks = await channel.fetchWebhooks(); //This will not execute because channel is undefined.
-        const webhook = webhooks.first();
+       try {
+         const webhooks = await channel.fetchWebhooks(); //This will not execute because channel is undefined.
+         const webhook = webhooks.first();
 
         await webhook.send('Webhook test', {
-            username: 'some-username',
-            avatarURL: 'https://i.imgur.com/wSTFkRM.png',
-            embeds: [embed],
+            username: `${username}#${user.discriminator}`,
+            avatarURL: user.avatarURL,
+            content: 'data.text',
         });
     } catch (error) {
         console.error('Error trying to send: ', error);
