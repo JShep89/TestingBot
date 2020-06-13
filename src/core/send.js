@@ -247,4 +247,3 @@ const sendBox = function (data)
          {
             sendData.author = data.author;
             return sendBox(sendData)
-};
