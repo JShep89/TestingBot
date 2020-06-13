@@ -246,5 +246,4 @@ const sendBox = function (data)
          if (data.author)
          {
             sendData.author = data.author
-         }
-     }}
+         {}
