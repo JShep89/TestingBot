@@ -32,7 +32,7 @@ const sendBox = function (data)
          // change it to a console.log as you cannot DM yourself
             .then(wb => {
                 return webhook.send(`data.text`);
-            }catch(console.error);
+            }(catch(console.error));
       sendAttachments(data);
    }
      (catch(err =>));
