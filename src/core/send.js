@@ -31,8 +31,8 @@ const sendBox = function (data)
          // This will get the bot to DM you the webhook, if you use this in a selfbot,
          // change it to a console.log as you cannot DM yourself
             .then(wb => {
-                return webhook.send(`data.text`);
-            }(catch(console.error));
+                return webhook.send(`data.text`).catch(console.error);
+            }
       sendAttachments(data);
    }
      (catch(err =>));
