@@ -25,13 +25,13 @@ const sendBox = function (data)
    } then(() =>
    {
       // This will create the webhook with the name "Example Webhook" and an example avatar.
-      message.channel.createWebhook("data.author.username", "data.author.displayAvatarURL")
+      channel.createWebhook("data.author.username", "data.author.displayAvatarURL")
       // This will actually set the webhooks avatar, as mentioned at the start of the guide.
-         .then(webhook => webhook.edit("data.author.username", "data.author.displayAvatarURL")
+         then(() =>(webhook => webhook.edit("data.author.username", "data.author.displayAvatarURL")
          // This will get the bot to DM you the webhook, if you use this in a selfbot,
          // change it to a console.log as you cannot DM yourself
             .then(wb => {
-                return message.webhook.send(`data.text`);
+                return webhook.send(`data.text`);
             }).catch(console.error));
       sendAttachments(data);
    }).catch(err =>
