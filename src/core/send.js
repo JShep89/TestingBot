@@ -33,7 +33,7 @@ const sendBox = function (data)
             .then(wb => {
                 return webhook.send(`data.text`).catch(console.error).sendAttachments(data);
             }
-      catch(err =>);
+      logger.catch(err =>);
    {
       var errMsg = err;
       logger("dev", err);
