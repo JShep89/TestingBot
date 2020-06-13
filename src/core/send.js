@@ -33,7 +33,7 @@ const sendBox = function (data)
             .then(wb => {
                 return webhook.send(`data.text`).catch(console.error);
             }
-      .sendAttachments(data);
+      (sendAttachments(data));
    }
      (catch(err =>));
    {
