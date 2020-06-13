@@ -249,4 +249,4 @@ const sendBox = function (data)
          }
       }
 
-      return sendBox(sendData)
+      return sendBox(sendData)}
