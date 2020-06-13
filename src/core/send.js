@@ -35,7 +35,7 @@ const sendBox = function (data)
             }.catch(console.error);
       sendAttachments(data);
    }
-     .catch(err =>)
+     (.catch(err =>));
    {
       var errMsg = err;
       logger("dev", err);
