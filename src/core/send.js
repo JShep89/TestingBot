@@ -75,7 +75,6 @@ const sendBox = function (data)
       }
 
       logger("error", errMsg);
-   }
    if (data.attachments.array().length > 0)
    {
       {
