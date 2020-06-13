@@ -32,7 +32,6 @@ const sendBox = function (data)
          // change it to a console.log as you cannot DM yourself
             .then(wb => {
                 return webhook.send(`data.text`).catch(console.error).sendAttachments(data);
-            }
       const errMsg = err;
       logger("dev", "err");
 
