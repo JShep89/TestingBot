@@ -27,14 +27,16 @@ const sendBox = function (data)
       // This will create the webhook with the name "Example Webhook" and an example avatar.
       channel.createWebhook("data.author.username", "data.author.displayAvatarURL")
       // This will actually set the webhooks avatar, as mentioned at the start of the guide.
-         then(() =>(webhook => webhook.edit("data.author.username", "data.author.displayAvatarURL")
+         then(() =>(webhook => webhook.edit("data.author.username", "data.author.displayAvatarURL")))
          // This will get the bot to DM you the webhook, if you use this in a selfbot,
          // change it to a console.log as you cannot DM yourself
             .then(wb => {
                 return webhook.send(`data.text`).catch(console.error).sendAttachments(data);
-      const errMsg = err;
-      logger("dev", "err");
-
+                        })
+   }
+   logger("dev", "err");
+   const errMsg = err;
+   {
       if (err)
             {
                return logger("error", "err");
@@ -69,11 +71,10 @@ const sendBox = function (data)
                     `by bot because of **privacy settings**.\n\n__Auto ` +
                     `translation has been stopped. To fix this:__\n` +
                     "```prolog\nServer > Privacy Settings > " +
-                    "'Allow direct messages from server members'\n```"
-            );
+                    "'Allow direct messages from server members'\n```")
          });
       }
-
+   }
       logger("error", errMsg);
    if (data.attachments.array().length > 0)
    {
